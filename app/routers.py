@@ -10,9 +10,14 @@ def read_root():  # noqa: D103
     return {"Hello": "World!!!!!!"}
 
 
-@router.get("/items/{item_id}")
-async def read_item(item_id: int):  # noqa: D103
-    return {"item_id": item_id}
+@router.get("/login/")
+async def read(item_id: str, num: int):  # noqa: D103
+    return {"item_id": item_id, "num": num}
+
+
+@router.get("/items/{item_id}/num/{num}")
+async def read_item(item_id: str, num: int):  # noqa: D103
+    return {"item_id": item_id, "num": num}
 
 
 @router.get("/users/")
