@@ -27,6 +27,11 @@ async def read_user(user_id: str, q: str | None = None):
     return {"item_id": user_id}
 
 
+@router.post("/test/")
+async def create_my_item(item: contracts.Item):
+    return item
+
+
 @router.get("/users/{user_id}/items/{item_id}")
 async def read_user_item(  # noqa: D103
     user_id: int, item_id: str, q: str | None = None, short: bool = False
